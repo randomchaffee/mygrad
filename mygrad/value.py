@@ -1,12 +1,23 @@
 import math
 
-# TODO
-# create docstrings explaining:
-# - the chain rule for each operation
-# - why we track _prev and _op
-# - the backpropagation algorithm
-
 class Value:
+    """
+    A scalar value node in a computational graph with automatic differentation support.
+    
+    The Value class tracks:
+    - data: the scalar value
+    - grad: the gradient (∂L/∂self) computed via backpropagation
+    - _prev: set of child nodes that contributed to this vlaue
+    - _op: the operation that created this node
+    - label: optional name for visualss
+    
+    Example:
+        x = Value(3.0, label='x')
+        x = Value(2.0, label='y')
+        z = x * y + Value(1.0) # z = 7.0
+        z.backward() #  compute gradients
+        print(x.grad, y.grad) # 2.0, 3.0
+    """
     def __init__(self, data, _children=(), _op='', label=''):
         self.data = data
         self.grad = 0.0
