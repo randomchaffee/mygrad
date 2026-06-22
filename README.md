@@ -25,25 +25,11 @@ cd mygrad
 # deps
 pip install -r requirements.txt
 ```
+### Try it out!
 
-### Quick start sample
-
-```python
-from mygrad import Value, MLP
-
-# create a simple 2-layer MLP: 3 inputs -> 4 hidden layers -> 1 output
-
-# forward pass
-inputs = [2.0, 3.0, -1.0]
-output = model(inputs)
-
-# backward pass
-output.backward()
-
-# access gradients
-for i, param in enumerate(model.parameters()):
-    print(f"Parameter {i} gradient: {param.grad}")
-```
+Check out the [examples/](examples/) folder for detailed notebooks:
+- `01_simple_value_ops.ipynb` - Basic operations and backpropagation
+- more in the future
 
 ### How it works
 *Automatic Differentation (Autograd)*: Every operation you perform creates a computational graph. The `backward()` method traverses this graph in reverse, computing gradients using the chain rule.
