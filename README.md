@@ -1,5 +1,5 @@
 # mygrad
-![Python](https://img.shields.io/badge/python-3.10%20%7C%203.11%20%7C%203.12-blue)
+![Python](https://img.shields.io/badge/Python%2B-3776AB?logo=python&logoColor=white)
 
 a from-scratch autograd engine and neural network library. Based off Karpathy's micrograd. 
 
